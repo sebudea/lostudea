@@ -1,3 +1,5 @@
+[![Build](https://github.com/sebudea/lostudea/actions/workflows/build.yml/badge.svg)](https://github.com/sebudea/lostudea/actions/workflows/build.yml)
+
 # lostudea
 
 A new Flutter project.
