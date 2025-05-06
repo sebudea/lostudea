@@ -1,0 +1,66 @@
+name: "Build"
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:  
+  build:
+    # The machine, we can also use windows-latest, macos-latest or ubuntu-latest      
+    # Si usamos ubuntu-latest o windows-latest gastamos 1min de creditos por cada 1min
+    # Si usamos macos-latest gastamos 10min de creditos por cada 1min
+    name: Build & Release Web App
+    runs-on: ubuntu-latest
+    # runs-on: macos-latest
+    timeout-minutes: 20
+
+    steps:
+        #1 Checkout Repository, Clones the project on the machine
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+        #2 Setup Java
+      - name: Set Up Java
+        uses: actions/setup-java@v3.12.0
+        with:
+          distribution: 'oracle'
+          java-version: '17'
+
+        #3 Setup Flutter
+      - name: Set Up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          # flutter-version: '3.22.2'
+          # ^ If you want to use a specific version of flutter
+          cache: true
+         
+        #4 Install Dependencies
+      - name: Install Dependencies
+        run: flutter pub get
+       
+        #5 Building Web
+      - name: Build WEB
+        run: flutter build web --release
+
+
+        # 6. Configure Git user
+      - name: Set Git Config
+        run: |
+            git config --global user.name 'github-actions[bot]'
+            git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+
+        # 7. Commit Web Build to Repository
+      - name: Commit and Push Web Build
+        run: |
+            git add build/web
+            git commit -m "Automated Web Build: ${{ github.sha }}"
+            git push origin main
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }} // Con esto no necesito configurar un Token, simplemente darle permisos al actions en mi repositorio
