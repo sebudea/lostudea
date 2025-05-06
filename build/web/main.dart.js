@@ -51302,7 +51302,7 @@ if(b?r.v(s,a):r.B(s,a))this.aF()}}
 A.GO.prototype={}
 A.yL.prototype={
 S(a){var s=null
-return new A.q0(B.Bw,"Flutter Demo",A.a2q(s,A.a4g(B.L,s,s,B.Bi),!0),s)}}
+return new A.q0(B.Bw,"Lost UdeA",A.a2q(s,A.a4g(B.L,s,s,B.Bi),!0),s)}}
 A.qd.prototype={
 aj(){return new A.u6()}}
 A.u6.prototype={
