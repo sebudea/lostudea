@@ -15,6 +15,7 @@ Permite a estudiantes, profesores, personal y visitantes publicar anuncios de ob
 También ofrece herramientas de búsqueda avanzada por categorías y palabras clave, así como notificaciones automáticas cuando se detectan coincidencias.
 
 **Estado Actual:** En desarrollo
+
 **Última Actualización:** Mayo 2025
 
 ## 🚀 Características Principales
