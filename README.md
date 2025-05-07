@@ -9,7 +9,8 @@
 
 ## 📖 Descripción General
 
-**LostUdeA** es una aplicación Web Flutter diseñada para facilitar la búsqueda y recuperación de objetos perdidos dentro de la **Universidad de Antioquia**.  
+**LostUdeA** es una aplicación Web Flutter diseñada para facilitar la búsqueda y recuperación de objetos perdidos dentro de la **Universidad de Antioquia**.
+
 Permite a estudiantes, profesores, personal y visitantes publicar anuncios de objetos perdidos o encontrados, incluyendo descripciones, fotografías, ubicación y fecha.
 
 También ofrece herramientas de búsqueda avanzada por categorías y palabras clave, así como notificaciones automáticas cuando se detectan coincidencias.
